@@ -28,13 +28,16 @@
  <br>
 
 <iframe id="iframe" src=flash/walkaround/walkaroundtest.html style="border: 3px solid black; width: 550px; height: 400px;"></iframe>
-<script>
-window.myIframe = document.getElementById("iframe").contentWindow;
-window.addEventListener("keydown", function(evt) { myIframe.myKeydownEventHandler(evt); });
-</script>
 <br>
 <p>great job everyone :D</p> 
 
+<script>
+    setTimeout(machet,100);
+    function machet() {
+        //alert("machet");
+        document.getElementById("iframe").contentWindow.focus();
+    }
+</script>
 
 </center>
 
