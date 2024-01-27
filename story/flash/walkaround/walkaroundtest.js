@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"walkaroundtest_atlas_1", frames: [[0,0,550,550],[854,0,250,250],[1106,0,250,250],[1358,0,250,250],[1610,0,250,250],[854,252,250,250],[552,0,300,300],[1106,252,250,250],[1358,252,250,250]]}
+		{name:"walkaroundtest_atlas_1", frames: [[0,0,550,550],[854,0,250,250],[1106,0,250,250],[1358,0,250,250],[1610,0,250,250],[854,252,250,250],[1106,252,250,250],[1358,252,250,250],[552,0,300,300],[1610,252,250,250],[552,302,250,250],[804,504,250,250],[1056,504,250,250]]}
 ];
 
 
@@ -41,51 +41,79 @@ lib.ssMetadata = [
 
 
 
-(lib.face = function() {
+(lib.body_1 = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.head = function() {
+(lib.face = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.headleft = function() {
+(lib.head = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.legs = function() {
+(lib.head_1 = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(5);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.play = function() {
+(lib.headleft = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(6);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.walk1 = function() {
+(lib.legs = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(7);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.walk2 = function() {
+(lib.play = function() {
 	this.initialize(ss["walkaroundtest_atlas_1"]);
 	this.gotoAndStop(8);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.walk1 = function() {
+	this.initialize(ss["walkaroundtest_atlas_1"]);
+	this.gotoAndStop(9);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.walk1_1 = function() {
+	this.initialize(ss["walkaroundtest_atlas_1"]);
+	this.gotoAndStop(10);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.walk2 = function() {
+	this.initialize(ss["walkaroundtest_atlas_1"]);
+	this.gotoAndStop(11);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.walk2_1 = function() {
+	this.initialize(ss["walkaroundtest_atlas_1"]);
+	this.gotoAndStop(12);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
 
@@ -128,7 +156,7 @@ if (reversed == null) { reversed = false; }
 p.nominalBounds = new cjs.Rectangle(0,0,300,300);
 
 
-(lib.head_1 = function(mode,startPosition,loop,reversed) {
+(lib.head_2 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -140,7 +168,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.head();
+	this.instance = new lib.head_1();
 	this.instance.setTransform(0,0,0.62,0.62);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -174,7 +202,7 @@ if (reversed == null) { reversed = false; }
 p.nominalBounds = new cjs.Rectangle(0,0,155,155);
 
 
-(lib.body_1 = function(mode,startPosition,loop,reversed) {
+(lib.body_2 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -186,7 +214,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib.body();
+	this.instance = new lib.body_1();
 	this.instance.setTransform(0,0,0.62,0.62);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -285,7 +313,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.playerhead = new lib.head_1("synched",0);
+	this.playerhead = new lib.head_2("synched",0);
 	this.playerhead.name = "playerhead";
 	this.playerhead.setTransform(0,0,1,1,0,0,0,77.5,77.5);
 
@@ -312,17 +340,27 @@ if (reversed == null) { reversed = false; }
 	this.playerlegs.name = "playerlegs";
 	this.playerlegs.setTransform(125.5,275,1,1,0,0,0,75.5,75.5);
 
-	this.instance = new lib.walk2();
+	this.instance = new lib.walk2_1();
 	this.instance.setTransform(43,203,0.62,0.62);
 	this.instance._off = true;
 
-	this.instance_1 = new lib.walk1();
+	this.instance_1 = new lib.walk1_1();
 	this.instance_1.setTransform(33,210,0.62,0.62);
 	this.instance_1._off = true;
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.playerlegs,p:{x:125.5}}]},1).to({state:[{t:this.instance}]},2).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[]},12).to({state:[{t:this.playerlegs,p:{x:128.5}}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.playerlegs,p:{x:125.5}}]},24).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(3).to({_off:false},0).wait(1).to({x:46,y:202},0).wait(1).to({y:200},0).wait(1).to({y:203},0).to({_off:true},1).wait(17).to({_off:false,scaleX:0.6202,skewY:180,x:194.05,y:205},0).wait(1).to({x:193.05,y:203},0).wait(1).to({y:202},0).to({_off:true},1).wait(29));
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(7).to({_off:false},0).wait(1).to({x:31,y:214},0).wait(1).to({x:29,y:216},0).wait(1).to({x:31,y:219},0).to({_off:true},12).wait(5).to({_off:false,skewY:180,x:204,y:211},0).wait(1).to({y:215},0).wait(1).to({x:206,y:217},0).wait(1).to({x:205,y:216},0).wait(1).to({x:204,y:214},0).to({_off:true},24).wait(1));
+	this.instance_2 = new lib.walk2();
+	this.instance_2.setTransform(38,214,0.62,0.62);
+	this.instance_2._off = true;
+
+	this.instance_3 = new lib.walk1();
+	this.instance_3.setTransform(192,217,0.62,0.62,0,0,180);
+	this.instance_3._off = true;
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.playerlegs,p:{x:125.5}}]}).to({state:[{t:this.instance}]},4).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[]},11).to({state:[{t:this.playerlegs,p:{x:128.5}}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[{t:this.instance_1}]},1).to({state:[]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[]},2).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_2}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[{t:this.instance_3}]},1).to({state:[]},2).to({state:[{t:this.playerlegs,p:{x:125.5}}]},4).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(4).to({_off:false},0).wait(1).to({x:46,y:202},0).wait(1).to({y:200},0).wait(1).to({y:203},0).to({_off:true},1).wait(16).to({_off:false,scaleX:0.6202,skewY:180,x:194.05,y:205},0).wait(1).to({x:193.05,y:203},0).wait(1).to({y:202},0).to({_off:true},1).wait(29));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(8).to({_off:false},0).wait(1).to({x:31,y:214},0).wait(1).to({x:29,y:216},0).wait(1).to({x:31,y:219},0).to({_off:true},11).wait(5).to({_off:false,skewY:180,x:204,y:211},0).wait(1).to({y:215},0).wait(1).to({x:206,y:217},0).wait(1).to({x:205,y:216},0).wait(1).to({x:204,y:214},0).to({_off:true},1).wait(24));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(33).to({_off:false},0).wait(1).to({x:40,y:213},0).wait(1).to({x:38,y:211},0).wait(1).to({x:37,y:210},0).to({_off:true},1).wait(5).to({_off:false,scaleX:0.6201,skewY:180,x:187,y:215},0).wait(1).to({x:184,y:213},0).wait(1).to({x:186,y:214},0).to({_off:true},1).wait(11));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(37).to({_off:false},0).wait(1).to({x:193,y:218},0).wait(1).to({x:194,y:219},0).to({_off:true},2).wait(4).to({_off:false,skewY:0,x:24,y:217},0).wait(1).to({x:23,y:226},0).wait(1).to({x:25,y:228},0).wait(1).to({x:29,y:233},0).wait(1).to({x:28,y:232},0).to({_off:true},2).wait(5));
 
 	this._renderFirstFrame();
 
@@ -343,15 +381,19 @@ if (reversed == null) { reversed = false; }
 	// headlayer
 	this.playerhead = new lib.Symbol1();
 	this.playerhead.name = "playerhead";
-	this.playerhead.setTransform(131.3,147.6,0.9998,0.9998,0,0,0,0.6,0.6);
-	this.playerhead._off = true;
+	this.playerhead.setTransform(131.3,148.1,0.9998,0.9998,0,0,0,0.6,0.6);
 
 	this.instance = new lib.headleft();
 	this.instance.setTransform(37,72,0.62,0.62);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.playerhead).wait(1).to({_off:false},0).wait(2).to({x:131.8},0).wait(1).to({x:133.3,y:146.1},0).wait(1).to({x:132.3,y:145.1},0).wait(1).to({y:146.1},0).wait(1).to({x:130.3,y:148.6},0).wait(1).to({x:129.3,y:149.6},0).wait(1).to({x:128.3,y:150.6},0).wait(1).to({x:128.8,y:151.6},0).to({_off:true},12).wait(1).to({_off:false,x:129.8,y:147.6},0).to({_off:true},1).wait(31).to({_off:false,x:131.3},0).wait(1));
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(24).to({_off:false},0).wait(1).to({x:34,y:70},0).wait(1).to({y:67},0).wait(1).to({y:75},0).wait(1).to({x:35,y:79},0).wait(1).to({x:38,y:82},0).wait(1).to({x:36,y:80},0).wait(1).to({x:32,y:76},0).to({_off:true},24).wait(1));
+	this.instance_1 = new lib.head();
+	this.instance_1.setTransform(40,79,0.62,0.62);
+	this.instance_1._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.playerhead).wait(4).to({x:131.8,y:147.6},0).wait(1).to({x:133.3,y:146.1},0).wait(1).to({x:132.3,y:145.1},0).wait(1).to({y:146.1},0).wait(1).to({x:130.3,y:148.6},0).wait(1).to({x:129.3,y:149.6},0).wait(1).to({x:128.3,y:150.6},0).wait(1).to({x:128.8,y:151.6},0).to({_off:true},11).wait(1).to({_off:false,x:129.8,y:147.6},0).to({_off:true},1).wait(31).to({_off:false,x:131.3},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(24).to({_off:false},0).wait(1).to({x:34,y:70},0).wait(1).to({y:67},0).wait(1).to({y:75},0).wait(1).to({x:35,y:79},0).wait(1).to({x:38,y:82},0).wait(1).to({x:36,y:80},0).wait(1).to({x:32,y:76},0).to({_off:true},1).wait(24));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(33).to({_off:false},0).wait(1).to({x:42,y:78},0).wait(1).to({x:43,y:77},0).wait(1).to({x:45},0).wait(1).to({x:47,y:81},0).wait(1).to({x:45,y:83},0).wait(1).to({x:46,y:81},0).to({_off:true},2).wait(1).to({_off:false,scaleX:0.6199,skewY:180,x:179},0).wait(1).to({x:180,y:77},0).wait(1).to({y:75},0).wait(1).to({x:175,y:80},0).wait(1).to({x:171,y:84},0).wait(1).to({x:176,y:89},0).wait(1).to({x:175,y:87},0).wait(1).to({x:172,y:85},0).to({_off:true},2).wait(5));
 
 	this._renderFirstFrame();
 
@@ -372,10 +414,9 @@ if (reversed == null) { reversed = false; }
 	// facelayer
 	this.playerface = new lib.face_1();
 	this.playerface.name = "playerface";
-	this.playerface.setTransform(159.95,158.8,1,1,0,0,0,77.5,77.5);
-	this.playerface._off = true;
+	this.playerface.setTransform(158.95,158.8,1,1,0,0,0,77.5,77.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.playerface).wait(1).to({_off:false},0).wait(2).to({x:161.95},0).wait(1).to({x:163.95,y:158.3},0).wait(1).to({x:165.45,y:157.8},0).wait(1).to({x:165.95,y:156.8},0).wait(1).to({x:163.95,y:161.3},0).wait(1).to({x:162.95,y:162.3},0).wait(1).to({x:161.95,y:163.3},0).wait(1).to({y:163.8},0).to({_off:true},12).wait(1).to({_off:false,x:156.45,y:158.8},0).wait(1).to({skewY:180,x:90.35,y:159.3},0).wait(1).to({x:79.35,y:161.8},0).wait(1).to({y:161.3},0).wait(1).to({y:164.3},0).wait(1).to({x:81.85,y:167.3},0).wait(1).to({x:82.85,y:168.3},0).wait(1).to({y:168.8},0).wait(1).to({x:80.85,y:166.8},0).wait(24).to({skewY:0,x:159.95,y:158.8},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.playerface).wait(4).to({x:161.95},0).wait(1).to({x:163.95,y:158.3},0).wait(1).to({x:165.45,y:157.8},0).wait(1).to({x:165.95,y:156.8},0).wait(1).to({x:163.95,y:161.3},0).wait(1).to({x:162.95,y:162.3},0).wait(1).to({x:161.95,y:163.3},0).wait(1).to({y:163.8},0).to({_off:true},11).wait(1).to({_off:false,x:156.45,y:158.8},0).wait(1).to({skewY:180,x:90.35,y:159.3},0).wait(1).to({x:79.35,y:161.8},0).wait(1).to({y:161.3},0).wait(1).to({y:164.3},0).wait(1).to({x:81.85,y:167.3},0).wait(1).to({x:82.85,y:168.3},0).wait(1).to({y:168.8},0).wait(1).to({x:80.85,y:166.8},0).to({_off:true},1).wait(23).to({_off:false,skewY:0,x:159.95,y:158.8},0).wait(1));
 
 	this._renderFirstFrame();
 
@@ -394,12 +435,16 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// bodylayer
-	this.playerbody = new lib.body_1();
+	this.playerbody = new lib.body_2();
 	this.playerbody.name = "playerbody";
 	this.playerbody.setTransform(135.5,220,1,1,0,0,0,77.5,77.5);
-	this.playerbody._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.playerbody).wait(1).to({_off:false},0).wait(2).to({x:136,y:219.5},0).wait(1).to({x:137},0).wait(1).to({x:136,y:220.5},0).wait(1).to({y:221.5},0).wait(1).to({y:223.5},0).wait(1).to({x:135.5,y:224.5},0).wait(1).to({x:134.5,y:225.5},0).wait(1).to({x:135.5,y:226.5},0).to({_off:true},12).wait(1).to({_off:false,x:137,y:220},0).wait(1).to({skewY:180,x:99},0).wait(1).to({x:98.5,y:219},0).wait(1).to({y:218},0).wait(1).to({y:221.5},0).wait(1).to({x:99.5,y:226},0).wait(1).to({x:100.5,y:227},0).wait(1).to({x:98.5},0).wait(1).to({x:96,y:225.5},0).wait(24).to({skewY:0,x:135.5,y:220},0).wait(1));
+	this.instance = new lib.body();
+	this.instance.setTransform(51,151,0.62,0.62);
+	this.instance._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.playerbody).wait(4).to({x:136,y:219.5},0).wait(1).to({x:137},0).wait(1).to({x:136,y:220.5},0).wait(1).to({y:221.5},0).wait(1).to({y:223.5},0).wait(1).to({x:135.5,y:224.5},0).wait(1).to({x:134.5,y:225.5},0).wait(1).to({x:135.5,y:226.5},0).to({_off:true},11).wait(1).to({_off:false,x:137,y:220},0).wait(1).to({skewY:180,x:99},0).wait(1).to({x:98.5,y:219},0).wait(1).to({y:218},0).wait(1).to({y:221.5},0).wait(1).to({x:99.5,y:226},0).wait(1).to({x:100.5,y:227},0).wait(1).to({x:98.5},0).wait(1).to({x:96,y:225.5},0).to({_off:true},1).wait(23).to({_off:false,skewY:0,x:135.5,y:220},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(33).to({_off:false},0).wait(1).to({x:49},0).wait(1).to({x:48,y:149},0).wait(1).to({x:47,y:148},0).wait(1).to({x:48,y:150},0).wait(1).to({x:47},0).wait(1).to({x:46,y:149},0).to({_off:true},2).wait(1).to({_off:false,scaleX:0.6199,skewY:180,x:171,y:157},0).wait(1).to({y:154},0).wait(1).to({y:149},0).wait(1).to({x:164,y:152},0).wait(1).to({x:161,y:156},0).wait(1).to({x:170,y:165},0).wait(1).to({x:169,y:164},0).wait(1).to({x:168,y:163},0).to({_off:true},2).wait(5));
 
 	this._renderFirstFrame();
 
@@ -442,7 +487,7 @@ if (reversed == null) { reversed = false; }
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0,1,2,3,4,5,6,7,8,9,10,11,22,23,24,25,26,27,28,29,30,31,55,56];
+	this.actionFrames = [0,1,2,4,5,6,7,8,9,10,11,22,23,24,25,26,27,28,29,30,31,32,40,50,55,56];
 	this.___GetDepth___ = function(obj) {
 		var depth = obj.depth;
 		var cameraObj = this.___camera___instance;
@@ -475,6 +520,10 @@ if (reversed == null) { reversed = false; }
 	// timeline functions:
 	this.frame_0 = function() {
 		this.button_2 = this.Actions.button_2;
+		this.playerface = this.facelayer.playerface;
+		this.playerhead = this.headlayer.playerhead;
+		this.playerbody = this.bodylayer.playerbody;
+		this.playerlegs = this.legslayer.playerlegs;
 		/* Click to Go to Frame and Play
 		Clicking on the specified symbol instance moves the playhead to the specified frame in the timeline and continues playback from that frame.
 		Can be used on the main timeline or on movie clip timelines.
@@ -487,21 +536,13 @@ if (reversed == null) { reversed = false; }
 			this.gotoAndPlay(56);
 	}
 	this.frame_1 = function() {
-		this.button_2 = undefined;this.playerface = this.facelayer.playerface;
-		this.playerhead = this.headlayer.playerhead;
-		this.playerbody = this.bodylayer.playerbody;
-		this.playerlegs = this.legslayer.playerlegs;
+		this.button_2 = undefined;
 	}
 	this.frame_2 = function() {
 		this.gotoAndPlay(1);
 	}
-	this.frame_3 = function() {
-		this.playerlegs = undefined;this.playerbody = undefined;this.playerhead = undefined;this.playerface = undefined;this.playerface = this.facelayer.playerface;
-		this.playerhead = this.headlayer.playerhead;
-		this.playerbody = this.bodylayer.playerbody;
-	}
 	this.frame_4 = function() {
-		this.playerbody = undefined;this.playerhead = undefined;this.playerface = undefined;this.playerface = this.facelayer.playerface;
+		this.playerlegs = undefined;this.playerbody = undefined;this.playerhead = undefined;this.playerface = undefined;this.playerface = this.facelayer.playerface;
 		this.playerhead = this.headlayer.playerhead;
 		this.playerbody = this.bodylayer.playerbody;
 	}
@@ -536,6 +577,9 @@ if (reversed == null) { reversed = false; }
 		this.playerbody = this.bodylayer.playerbody;
 	}
 	this.frame_11 = function() {
+		this.playerbody = undefined;this.playerhead = undefined;this.playerface = undefined;this.playerface = this.facelayer.playerface;
+		this.playerhead = this.headlayer.playerhead;
+		this.playerbody = this.bodylayer.playerbody;
 		this.gotoAndPlay(3);
 	}
 	this.frame_22 = function() {
@@ -580,8 +624,17 @@ if (reversed == null) { reversed = false; }
 		this.playerbody = this.bodylayer.playerbody;
 		this.gotoAndPlay(25);
 	}
+	this.frame_32 = function() {
+		this.playerbody = undefined;this.playerface = undefined;
+	}
+	this.frame_40 = function() {
+		this.gotoAndPlay(33);
+	}
+	this.frame_50 = function() {
+		this.gotoAndPlay(42)
+	}
 	this.frame_55 = function() {
-		this.playerbody = undefined;this.playerface = undefined;this.playerface = this.facelayer.playerface;
+		this.playerface = this.facelayer.playerface;
 		this.playerhead = this.headlayer.playerhead;
 		this.playerbody = this.bodylayer.playerbody;
 		this.playerlegs = this.legslayer.playerlegs;
@@ -593,48 +646,145 @@ if (reversed == null) { reversed = false; }
 		camera = AdobeAn.VirtualCamera.getCamera(exportRoot);
 		var walkrighting = 0;
 		var walklefting = 0;
+		var uplefting = 0;
+		var uprighting = 0;
+		var uping = 0;
+		var plzdontmove = 0;
+		
+		var left=false;
+		var right=false;
+		var up=false;
+		var down=false;
 		
 		var keyState = [];    
 		
 		var keyState = {};    
 		window.addEventListener('keydown',function(e){
-		    keyState[e.keyCode || e.which] = true;
+		    console.log("keypressed");
+			keyState[e.keyCode || e.which] = true;
 		},true);    
 		window.addEventListener('keyup',function(e){
 		    keyState[e.keyCode || e.which] = false;
+			nomovement();
 		},true);
 		
-		function gameLoop() {
-		    if (keyState[37] || keyState[65]){
-			camera.moveBy (4, 0, 0);	
-				
-				
-						if (walklefting == 0){
-						walkrighting = 0
-							walklefting = 1
-					_this.gotoAndPlay(23);
-			}
-			
-		    }    
-		    else if (keyState[39] || keyState[68]){
-			camera.moveBy (-4, 0, 0);
-				
-				if (walkrighting == 0){
-					walklefting = 0
-					walkrighting = 1
-					_this.gotoAndPlay(3);
-				}
-			}
+		function nomovement(){
 		
-				else{
 				walkrighting = 0;
 				walklefting = 0;
+				uprighting = 0;
+				uplefting = 0;
+				uping = 0;
+				left=false;
+				right=false;
+				down=false;
+				up=false;
 				_this.gotoAndPlay(1);
-			}
 			
-			setTimeout(gameLoop, 12);
+			}
 		
-		}    
+		function gameLoop() {
+			
+		    if (keyState[37] || keyState[65]){
+		left=true;
+		    }    
+			if (keyState[39] || keyState[68]){
+		right=true;
+			}
+			if (keyState[40] || keyState[83]){
+		down=true;		
+			}
+			if (keyState[38] || keyState[87]){
+		up=true;		
+			}
+		
+				if (left && right == false){
+					if (plzdontmove == 1){}
+					else{
+				camera.moveBy (4, 0, 0);	
+				
+						if (walklefting == 0 && up == false){
+						walkrighting = 0;
+						walklefting = 1;
+					_this.gotoAndPlay(23);
+						}
+		}
+		}
+		
+		else if (right && left == false){
+						if (plzdontmove == 1){}
+					else{
+				camera.moveBy (-4, -0, 0);
+			
+		
+				 if (walkrighting == 0 && up == false){
+					walkrighting = 1
+					 uprighting = 0;
+					_this.gotoAndPlay(4);
+					}
+		
+		
+				}
+		}
+		
+		if (up && down == false){
+						if (plzdontmove == 1){}
+					else{
+				camera.moveBy (0, 3, 0);
+		
+			if (uping == 0){
+						uping = 1;
+					_this.gotoAndPlay(33);
+			}				
+						
+			if (uprighting == 0 && right == true){
+						uprighting = 1;
+						walkrighting = 0;
+					_this.gotoAndPlay(34);
+			}
+			else if (uplefting == 0 && left == true){
+				console.log("bluh");
+						uplefting = 1;
+						walklefting = 0;
+					_this.gotoAndPlay(43);
+			}
+				}
+				}
+			
+			
+		else if (down && up == false){
+						if (plzdontmove == 1){}
+					else{
+				camera.moveBy (0, -3, 0);
+			
+				if (walkrighting == 0 && left == false){
+					walkrighting = 1;
+					_this.gotoAndPlay(4);
+					
+					}
+				}
+					}
+			
+			
+					if(right && left || up && down){
+				plzdontmove = 1;
+						
+				walkrighting = 0;
+				walklefting = 0;
+				uprighting = 0;
+				uplefting = 0;
+				uping = 0;
+						_this.gotoAndPlay(1);
+					}
+					
+									else{
+			plzdontmove = 0;
+			}
+		
+				setTimeout(gameLoop, 12);
+			
+		}
+			
 		
 		gameLoop();
 		
@@ -661,7 +811,7 @@ if (reversed == null) { reversed = false; }
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(1).call(this.frame_3).wait(1).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1).call(this.frame_9).wait(1).call(this.frame_10).wait(1).call(this.frame_11).wait(11).call(this.frame_22).wait(1).call(this.frame_23).wait(1).call(this.frame_24).wait(1).call(this.frame_25).wait(1).call(this.frame_26).wait(1).call(this.frame_27).wait(1).call(this.frame_28).wait(1).call(this.frame_29).wait(1).call(this.frame_30).wait(1).call(this.frame_31).wait(24).call(this.frame_55).wait(1).call(this.frame_56).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1).call(this.frame_1).wait(1).call(this.frame_2).wait(2).call(this.frame_4).wait(1).call(this.frame_5).wait(1).call(this.frame_6).wait(1).call(this.frame_7).wait(1).call(this.frame_8).wait(1).call(this.frame_9).wait(1).call(this.frame_10).wait(1).call(this.frame_11).wait(11).call(this.frame_22).wait(1).call(this.frame_23).wait(1).call(this.frame_24).wait(1).call(this.frame_25).wait(1).call(this.frame_26).wait(1).call(this.frame_27).wait(1).call(this.frame_28).wait(1).call(this.frame_29).wait(1).call(this.frame_30).wait(1).call(this.frame_31).wait(1).call(this.frame_32).wait(8).call(this.frame_40).wait(10).call(this.frame_50).wait(5).call(this.frame_55).wait(1).call(this.frame_56).wait(1));
 
 	// Camera
 	this.___camera___instance = new lib.___Camera___();
@@ -689,6 +839,7 @@ if (reversed == null) { reversed = false; }
 	// facelayer_obj_
 	this.facelayer = new lib.Scene_1_facelayer();
 	this.facelayer.name = "facelayer";
+	this.facelayer.setTransform(159,158.8,1,1,0,0,0,159,158.8);
 	this.facelayer.depth = 0;
 	this.facelayer.isAttachedToCamera = 1
 	this.facelayer.isAttachedToMask = 0
@@ -701,6 +852,7 @@ if (reversed == null) { reversed = false; }
 	// headlayer_obj_
 	this.headlayer = new lib.Scene_1_headlayer();
 	this.headlayer.name = "headlayer";
+	this.headlayer.setTransform(130.7,147.5,1,1,0,0,0,130.7,147.5);
 	this.headlayer.depth = 0;
 	this.headlayer.isAttachedToCamera = 1
 	this.headlayer.isAttachedToMask = 0
@@ -713,6 +865,7 @@ if (reversed == null) { reversed = false; }
 	// bodylayer_obj_
 	this.bodylayer = new lib.Scene_1_bodylayer();
 	this.bodylayer.name = "bodylayer";
+	this.bodylayer.setTransform(135.5,220,1,1,0,0,0,135.5,220);
 	this.bodylayer.depth = 0;
 	this.bodylayer.isAttachedToCamera = 1
 	this.bodylayer.isAttachedToMask = 0
@@ -725,6 +878,7 @@ if (reversed == null) { reversed = false; }
 	// legslayer_obj_
 	this.legslayer = new lib.Scene_1_legslayer();
 	this.legslayer.name = "legslayer";
+	this.legslayer.setTransform(125.5,275,1,1,0,0,0,125.5,275);
 	this.legslayer.depth = 0;
 	this.legslayer.isAttachedToCamera = 1
 	this.legslayer.isAttachedToMask = 0
