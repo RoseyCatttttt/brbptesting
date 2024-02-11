@@ -79,7 +79,6 @@ function init() {
 	var comp=AdobeAn.getComposition("B63A6E17AA593E47967FBCAE4165353B");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
-	loader.setMaxConnections(30);
 	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
@@ -126,5 +125,6 @@ function playSound(id, loop, offset) {
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: none;">
 		</div>
 	</div>
-    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; width:80%; text-align: center; background-color: none;'>	<img src=images/preloader.gif style='vertical-align: middle; min-height: 100%; border: 3px solid black;'/></div></body>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; width:80%; text-align: center; background-color: none;'>	<img src=images/preloader.gif style='vertical-align: middle; min-height: 100%; border: 3px solid black;'/></div>
+</body>
 </html>
