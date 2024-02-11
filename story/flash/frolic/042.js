@@ -1293,7 +1293,7 @@ lib.properties = {
 	width: 550,
 	height: 400,
 	fps: 24,
-	color: "#3A3A3A",
+	color: "#666666",
 	opacity: 1.00,
 	manifest: [
 		{src:"images/_042endslrt.png", id:"_042endslrt"},
