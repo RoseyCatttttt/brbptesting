@@ -79,6 +79,7 @@ function init() {
 	var comp=AdobeAn.getComposition("B63A6E17AA593E47967FBCAE4165353B");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
+	loader.setMaxConnections(40);
 	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
