@@ -24,6 +24,7 @@ function init() {
 	var comp=AdobeAn.getComposition("70CB23A2DDADF547AEEDC97C3F006CD3");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
+	loader.setMaxConnections(40);
 	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
